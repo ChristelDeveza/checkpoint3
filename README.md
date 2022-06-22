@@ -33,7 +33,7 @@ Une fois terminé, prenez une photo et committez-la sur votre branche.
 
 ## :two: NodeJS / Express
 
-### Mise en route :point_down :
+### Mise en route :point_down:
 
 Le projet est livré avec ESLint et Prettier.
 
@@ -44,21 +44,24 @@ Dans le répertoire du projet, vous pouvez exécuter différents scripts :
 
 ---
 
-**Dans cette étape, vous allez créer une API qui vous permet de gérer les chansons et les albums en utilisant Node/Express**.
+**Dans cette étape, vous allez créer une API qui vous permet de gérer des albums et des pistes avec Node/Express**.
 
 _S'il vous plaît, n'oubliez pas de faire des commits atomiques avec des messages explicites_ :pray:
 
 Voici le schéma de la base de données :
 ![UML](./database.png)
 
+---
+
+### Configuration
+
 Importez la base de données à partir du fichier `database.sql`.
 
----
+Ajoutez la configuration nécessaire à l'accès à la base de données.
 
 ### Règles
 
-- :white_check_mark: Respectez les bonnes pratiques RESTful : attention aux codes HTTP de retour !
-- :white_check_mark: Prenez en compte les erreurs possibles
+- :heavy_check_mark: Respectez les bonnes pratiques RESTful : attention aux codes HTTP de retour (en cas de succès et en cas d'erreur) !
 
 ### Votre mission
 

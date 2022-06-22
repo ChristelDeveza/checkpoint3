@@ -1,42 +1,103 @@
-# MVC Express
+# NODE MUSICS - CHECKPOINT 3
 
-## Description
+## :zero: Setup
 
-This repository is a simple Express MVC structure from scratch.
+Avant de commencer quoi que ce soit d'autre, votre première mission est de **cloner** ce projet, puis de créer une branche avec votre nom et prénom comme ceci : `lastname_firstname`.
 
-## Steps
+Configurer votre projet afin qu'aucune erreur ne soit retournée par la commande `npm run dev`.
 
-1. Clone the repo from Github.
-2. Run `npm install` or `yarn install`.
-3. Create _.env_ from _.env.sample_ file and add your DB parameters. Don't delete the _.sample_ file, it must be kept.
+## :one:  Modélisation de la base de données
 
-```
-DB_HOST=your_db_host
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_NAME=your_db_name
-```
+La SPA de Capbreton a besoin de nous !
 
-4. Adapt _database.sql_ with your own tables. Import the script in your SQL server. You can do it manually or run _migrate_ script (either using `npm run migrate` or `yarn run migrate`).
-5. Start the server in dev mode with `npm run dev` or `yarn run dev`. This will run `index.js` using _nodemon_.
-6. Go to `localhost:5000` with your favorite browser.
-7. From this starter kit, create your own web application.
+Actuellement leurs hôtes ont chacun une fiche papier mais ça devient le calvaire. Ils ont commandé une application permettant de recenser tous les pensionnaires : chiens, chats, canards (oui, c'est les Landes). Il n'est pas prévu d'avoir plus de races d'animaux.
 
-### Windows Users
+Un pensionnaire a un prénom (deux animaux peuvent avoir le même), un age, une date d'entrée, une photo et une date de sortie. On doit pouvoir dire si un pensionnaire est un chien, un chat ou un canard.
 
-If you develop on Windows, you should edit you git configuration to change your end of line rules with this command :
+La SPA doit pouvoir accèder à tous les compte-rendus vétérinaires des pensionnaires : date de visite, motif de la visite et description.
 
-`git config --global core.autocrlf true`
+Ils veulent également pouvoir filtrer en fonction des tolérances de chaque pensionnaire, dans un premier temps :
+​
+- Cohabitation possible avec chien
+- Cohabitation possible avec chat
+- Cohabitation possible avec canard
+- Apprécie la présence des enfants
 
-## Example
+La SPA prévoit qu'il soit possible d'ajouter d'autres tolérances plus tard.
 
-An example (a basic list of items) is provided (you can load the _database.sql_ file in a test database). The accessible URLs are :
+En vous basant sur l'énoncé, réalisez le **MCD** et le **MLD** (vous pouvez le faire en français).
 
-- Home page: [GET localhost:5000/](localhost:5000/)
-- Item browse: [GET localhost:5000/items](localhost:5000/items)
-- Item read: [GET localhost:5000/items/:id](localhost:5000/items/2)
-- Item edit: PUT localhost:5000/items/:id
-- Item add: POST localhost:5000/items
-- Item deletion: DELETE localhost:5000/items/:id
+Une fois terminé, prenez une photo et committez-la sur votre branche.
 
-You can find all these routes declared in the file `src/router.js`. You can add your own new routes, controllers and models.
+> Il faut que ce soit lisible (pensez à mes yeux :eyes:)
+
+## :two: NodeJS / Express
+
+### Mise en route :point_down :
+
+Le projet est livré avec ESLint et Prettier.
+
+Dans le répertoire du projet, vous pouvez exécuter différents scripts :
+
+- `npm run dev` : Lance l'application en mode développement en utilisant `nodemon` sur le port 5000 par défaut.
+- `npm run lint` : Cette application est fournie avec une configuration ESLint basique (Prettier + React), vous pouvez lancer une vérification à chaque fois en utilisant ce script.
+
+---
+
+**Dans cette étape, vous allez créer une API qui vous permet de gérer les chansons et les albums en utilisant Node/Express**.
+
+_S'il vous plaît, n'oubliez pas de faire des commits atomiques avec des messages explicites_ :pray:
+
+Voici le schéma de la base de données :
+![UML](./database.png)
+
+Importez la base de données à partir du fichier `database.sql`.
+
+---
+
+### Règles
+
+- :white_check_mark: Respectez les bonnes pratiques RESTful : attention aux codes HTTP de retour !
+- :white_check_mark: Prenez en compte les erreurs possibles
+
+### Votre mission
+
+Créez les routes suivantes :
+
+### Albums
+
+- `POST /albums` : créer un nouvel album
+- `GET /albums` : récupérer la liste complète des albums
+- `GET /albums/{albumId}` : récupérer un album par son identifiant
+- `PUT /albums/{albumId}` : mettre à jour un album
+
+### Pistes
+
+- `POST /albums/{albumId}/tracks` : créer une nouvelle piste
+- `DELETE /albums/{albumId}/tracks/{trackId}` : supprimer une piste
+- `GET /albums/{albumId}/tracks` : récupérer toutes les pistes d'un album
+
+### Bonus 1
+
+Répondre aux histoires utilisateurs suivantes :
+
+- en tant qu'utilisateur, je peux rechercher les albums d'un artiste
+- en tant qu'utilisateur, je peux rechercher des albums par leur titre (même incomplet)
+
+### Bonus 2
+
+Ajouter la validation des données pour les routes en POST et PUT
+
+### Bonus 3
+
+Répondre aux histoires utilisateurs suivantes (vous pouvez ajouter une vérification par JWT) :
+
+- en tant qu'utilisateur, je dois pouvoir m'inscrire avec un email et un mot de passe
+- en tant qu'utilisateur, je dois pouvoir m'authentifier
+- en tant qu'utilisateur authentifié, je dois pouvoir ajouter un album à ma liste de favoris
+
+## It's done ! Congrats !
+
+Vous pouvez maintenant vous détendre :beers:
+
+Mais pensez à bien tout versionner :wink:

@@ -2,7 +2,7 @@
 
 ## :zero: Setup
 
-Avant de commencer quoi que ce soit d'autre, votre première mission est de **cloner** ce projet, puis de créer une branche avec votre nom et prénom comme ceci : `lastname_firstname`.
+Avant de commencer quoi que ce soit d'autre, votre première mission est de **cloner** ce projet, puis de créer une branche avec vos noms et prénoms comme ceci : `Durand_Michel`.
 
 Configurer votre projet afin qu'aucune erreur ne soit retournée par la commande `npm run dev`.
 

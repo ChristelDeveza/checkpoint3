@@ -6,7 +6,21 @@ Avant de commencer quoi que ce soit d'autre, votre première mission est de **cl
 
 Configurer votre projet afin qu'aucune erreur ne soit retournée par la commande `npm run dev`.
 
-## :one:  Modélisation de la base de données
+---
+
+**A chaque fois que tu complètes un exercice:**
+
+- Fais un commit avec un message EXPLICITE sur ta branche.
+- Fais un push de ta branche.
+
+**Conseils importants :**
+
+- n'essaie par de tout faire, cible ce qui est le plus rapide
+- si tu bloques, passe à l'exercice suivant
+- ne fait pas les bonus avant d'avoir terminé tout le reste du checkpoint !
+- tu peux utiliser Internet, tes notes, les quêtes, les cours (sauf pour le quiz)
+
+## :one: Modélisation de la base de données
 
 La SPA de Capbreton a besoin de nous !
 
@@ -18,6 +32,7 @@ La SPA doit pouvoir accèder à tous les compte-rendus vétérinaires des pensio
 
 Ils veulent également pouvoir filtrer en fonction des tolérances de chaque pensionnaire, dans un premier temps :
 ​
+
 - Cohabitation possible avec chien
 - Cohabitation possible avec chat
 - Cohabitation possible avec canard

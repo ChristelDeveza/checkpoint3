@@ -95,18 +95,18 @@ Créez les routes suivantes :
 - `DELETE /albums/{albumId}/tracks/{trackId}` : supprimer une piste
 - `GET /albums/{albumId}/tracks` : récupérer toutes les pistes d'un album
 
-### Bonus 1
+#### Bonus 1 : Recherche
 
 Répondre aux histoires utilisateurs suivantes :
 
 - en tant qu'utilisateur, je peux rechercher les albums d'un artiste
 - en tant qu'utilisateur, je peux rechercher des albums par leur titre (même incomplet)
 
-### Bonus 2
+#### Bonus 2 : Validation
 
 Ajouter la validation des données pour les routes en POST et PUT
 
-### Bonus 3
+#### Bonus 3 : Authentification
 
 Répondre aux histoires utilisateurs suivantes (vous pouvez ajouter une vérification par JWT) :
 

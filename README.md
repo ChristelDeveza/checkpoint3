@@ -18,7 +18,7 @@ Configurer votre projet afin qu'aucune erreur ne soit retournée par la commande
 - n'essaie par de tout faire, cible ce qui est le plus rapide
 - si tu bloques, passe à l'exercice suivant
 - ne fait pas les bonus avant d'avoir terminé tout le reste du checkpoint !
-- tu peux utiliser Internet, tes notes, les quêtes, les cours (sauf pour le quiz)
+- tu peux utiliser Internet, tes notes, les quêtes, les cours (mais utilise ta tête en premier !)
 
 ## :one: Modélisation de la base de données
 

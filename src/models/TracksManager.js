@@ -10,11 +10,10 @@ class TracksManager extends AbstractManager {
     );
   }
 
-  update(item) {
-    return this.connection.query(
-      `update ${TracksManager.table} set title = ? where id = ?`,
-      [item.title, item.id]
-    );
+  delete(id) {
+    return this.connection.query(`delete from ${this.table} where id = ?`, [
+      id,
+    ]);
   }
 }
 

@@ -15,8 +15,8 @@ class TracksController {
       });
   };
 
-  static delete = (req, res) => {
-    models.item
+  static deleteTrack = (req, res) => {
+    models.track
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);

@@ -13,6 +13,7 @@ router.get("/albums", AlbumsController.browse);
 router.get("/albums/:id", AlbumsController.getOneAlbum);
 router.put("/albums/:id", AlbumsController.edit);
 router.post("/albums/:id/tracks", TracksController.addTrack);
+router.delete("/albums/:id/tracks/:id", TracksController.deleteTrack);
 
 router.get("/items", ItemController.browse);
 router.get("/items/:id", ItemController.read);

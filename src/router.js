@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post("/albums", AlbumsController.create);
 router.get("/albums", AlbumsController.browse);
+router.get("/albums/:id", AlbumsController.getOneAlbum);
 
 router.get("/items", ItemController.browse);
 router.get("/items/:id", ItemController.read);

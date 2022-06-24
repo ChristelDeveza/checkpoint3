@@ -29,6 +29,22 @@ class AlbumsController {
         res.sendStatus(500);
       });
   };
+
+  static getOneAlbum = (req, res) => {
+    models.album
+      .find(req.params.id)
+      .then(([rows]) => {
+        if (rows[0] == null) {
+          res.status(404).send({ error: "This id does not exist" });
+        } else {
+          res.send(rows[0]);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 }
 
 module.exports = AlbumsController;

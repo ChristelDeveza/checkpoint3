@@ -15,6 +15,13 @@ class TracksManager extends AbstractManager {
       id,
     ]);
   }
+
+  findTrack(albumId) {
+    return this.connection.query(
+      `select * from  ${this.table} where album_id= ?`,
+      [albumId]
+    );
+  }
 }
 
 module.exports = TracksManager;

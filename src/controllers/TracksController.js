@@ -16,10 +16,26 @@ class TracksController {
   };
 
   static deleteTrack = (req, res) => {
-    models.track
+    models.item
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static browseTracks = (req, res) => {
+    models.track
+      .findTrack(req.params.id)
+      .then(([rows]) => {
+        if (rows[0] == null) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows);
+        }
       })
       .catch((err) => {
         console.error(err);

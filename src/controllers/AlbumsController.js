@@ -48,7 +48,6 @@ class AlbumsController {
 
   static edit = (req, res) => {
     const album = req.body;
-
     album.id = parseInt(req.params.id, 10);
 
     models.album

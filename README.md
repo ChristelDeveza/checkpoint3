@@ -100,7 +100,7 @@ Créez les routes suivantes :
 Répondre aux histoires utilisateurs suivantes :
 
 - en tant qu'utilisateur, je peux rechercher les albums d'un artiste
-- en tant qu'utilisateur, je peux rechercher des albums par leur titre (même incomplet)
+- en tant qu'utilisateur, je peux filtrer des albums par leur titre (même incomplet)
 
 #### Bonus 2 : Validation
 

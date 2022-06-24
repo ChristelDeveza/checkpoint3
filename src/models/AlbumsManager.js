@@ -10,10 +10,10 @@ class AlbumsManager extends AbstractManager {
     );
   }
 
-  update(item) {
+  update(album) {
     return this.connection.query(
-      `update ${AlbumsManager.table} set title = ? where id = ?`,
-      [item.title, item.id]
+      `update ${AlbumsManager.table} set title = ?, artist = ? where id = ?`,
+      [album.title, album.artist, album.id]
     );
   }
 }

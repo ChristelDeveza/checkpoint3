@@ -45,6 +45,26 @@ class AlbumsController {
         res.sendStatus(500);
       });
   };
+
+  static edit = (req, res) => {
+    const album = req.body;
+
+    album.id = parseInt(req.params.id, 10);
+
+    models.album
+      .update(album)
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.status(404);
+        } else {
+          res.status(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 }
 
 module.exports = AlbumsController;

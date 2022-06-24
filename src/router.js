@@ -1,8 +1,10 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
+const { ItemController, AlbumsController } = require("./controllers");
 
 const router = express.Router();
+
+router.post("/albums", AlbumsController.create);
 
 router.get("/items", ItemController.browse);
 router.get("/items/:id", ItemController.read);

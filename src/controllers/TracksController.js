@@ -3,9 +3,9 @@ const models = require("../models");
 class TracksController {
   static addTrack = (req, res) => {
     const track = req.body;
-
+    const { id: albumId } = req.params;
     models.track
-      .insert(track)
+      .insert(track, albumId)
       .then(([result]) => {
         res.status(201).send({ ...track, id: result.insertId });
       })
@@ -16,7 +16,7 @@ class TracksController {
   };
 
   static deleteTrack = (req, res) => {
-    models.item
+    models.track
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);

@@ -3,10 +3,10 @@ const AbstractManager = require("./AbstractManager");
 class TracksManager extends AbstractManager {
   static table = "track";
 
-  insert(track) {
+  insert(track, albumId) {
     return this.connection.query(
       `insert into ${TracksManager.table} (title, duration, album_id) values (?, ?, ?)`,
-      [track.title, track.duration, track.album_id]
+      [track.title, track.duration, albumId]
     );
   }
 
